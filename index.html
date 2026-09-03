@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gianlucca Palma — Desenvolvedor de Software</title>
+<link rel="icon" type="image/svg+xml" sizes="any" href="favicon.svg">
+<meta name="description" content="Portfólio de Gianlucca Palma, desenvolvedor de software especializado em Python, Java, C# e SQL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ SPRITE DE ÍCONES (pinheiro, condor, guanaco, raposa) ============ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-pine" viewBox="0 0 40 60">
+      <path d="M20,2 L32,20 L26,20 L36,34 L28,34 L38,48 L22,48 L22,58 L18,58 L18,48 L2,48 L12,34 L4,34 L14,20 L8,20 Z" />
+    </symbol>
+
+    <symbol id="icon-condor" viewBox="0 0 120 40">
+      <path d="M0,22 C12,4 22,26 34,12 C40,5 46,8 48,14 C50,8 56,5 60,12 C64,5 70,8 72,14 C74,8 80,5 86,12 C88,6 98,4 120,22 C104,15 92,20 78,17 C72,15 66,15 60,17 C54,15 48,15 42,17 C28,20 16,15 0,22 Z" />
+    </symbol>
+
+    <symbol id="icon-guanaco" viewBox="0 0 100 90">
+      <ellipse cx="42" cy="60" rx="26" ry="14" />
+      <path d="M58,52 L74,10 L82,10 L70,55 Z" />
+      <ellipse cx="78" cy="8" rx="8" ry="6" />
+      <path d="M72,3 L74,-4 L77,2 Z" />
+      <path d="M83,3 L86,-4 L88,3 Z" />
+      <rect x="24" y="70" width="6" height="18" rx="2" />
+      <rect x="38" y="72" width="6" height="16" rx="2" />
+      <rect x="52" y="72" width="6" height="16" rx="2" />
+      <rect x="62" y="70" width="6" height="18" rx="2" />
+      <path d="M16,54 L6,46 L10,58 Z" />
+    </symbol>
+
+    <symbol id="icon-fox" viewBox="0 0 100 70">
+      <path d="M50,60 C30,60 16,48 16,34 C16,20 28,10 46,10 C64,10 78,20 78,34 C78,48 68,60 50,60 Z" />
+      <path d="M20,18 L8,2 L26,12 Z" />
+      <path d="M70,18 L82,2 L64,12 Z" />
+      <path class="fox__tail" d="M74,44 C92,40 96,20 84,8 C96,16 98,42 78,54 C68,60 58,54 62,46 C66,50 72,48 74,44 Z" />
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="loader__mark">▲</span>
+</div>
+
+<!-- ============ SCROLL PROGRESS ============ -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="nav__mark" aria-label="Início">▲</a>
+  <nav class="nav__links" id="navLinks">
+    <a href="#sobre">Sobre</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#contato">Contato</a>
+    <span class="nav__indicator" id="navIndicator"></span>
+  </nav>
+  <a href="#contato" class="nav__cta">Vamos falar</a>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__bg">
+    <img src="lake-landscape.jpg" alt="Lago e montanhas da Patagônia" loading="eager">
+    <div class="hero__scrim"></div>
+  </div>
+
+  <svg class="hero__condor" viewBox="0 0 120 40" aria-hidden="true">
+    <use href="#icon-condor" />
+  </svg>
+
+  <svg class="hero__treeline" viewBox="0 0 1000 70" preserveAspectRatio="none" aria-hidden="true">
+    <use href="#icon-pine" x="10" y="14" width="34" height="52" class="pine pine--sway-slow" />
+    <use href="#icon-pine" x="55" y="6" width="46" height="64" class="pine pine--sway" />
+    <use href="#icon-pine" x="112" y="18" width="30" height="46" class="pine pine--sway-slow" />
+    <use href="#icon-pine" x="860" y="10" width="42" height="60" class="pine pine--sway" />
+    <use href="#icon-pine" x="912" y="20" width="28" height="44" class="pine pine--sway-slow" />
+    <use href="#icon-pine" x="950" y="4" width="48" height="66" class="pine pine--sway" />
+  </svg>
+
+  <div class="hero__inner">
+    <div class="hero__text hero__text--panel">
+      <p class="eyebrow fade-up" style="--d:0.1s">Desenvolvedor de Software</p>
+      <h1 class="hero__name fade-up" style="--d:0.25s">Gianlucca&nbsp;Palma</h1>
+      <p class="hero__tagline fade-up" style="--d:0.4s">
+        Técnico em Informática pelo <strong>IFMS</strong>, hoje cursando Análise e
+        Desenvolvimento de Sistemas na <strong>Infnet</strong> e Desenvolvimento de
+        Software pela <strong>BYU</strong>. Construo com Python, Java, C#, SQL e
+        interfaces web — em português, inglês e espanhol.
+      </p>
+      <div class="hero__actions fade-up" style="--d:0.55s">
+        <a href="#projetos" class="btn btn--seal btn--magnetic">Ver projetos</a>
+        <a href="curriculo.pdf" class="btn btn--ghost btn--magnetic">Baixar currículo</a>
+      </div>
+    </div>
+
+    <div class="hero__portrait fade-up" style="--d:0.3s">
+      <div class="hero__portrait-frame">
+        <img src="profile.jpg" alt="Retrato de Gianlucca" loading="eager">
+      </div>
+    </div>
+  </div>
+
+  <a href="#sobre" class="scroll-hint" aria-label="Rolar para a seção Sobre">
+    <span class="scroll-hint__line"></span>
+  </a>
+
+  <svg class="wave-divider" style="color:var(--parchment)" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,30 C200,60 350,0 600,20 C850,40 1000,0 1200,25 L1200,60 L0,60 Z" fill="currentColor" />
+  </svg>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="section section--parchment" id="sobre">
+  <div class="section__inner">
+    <div class="reveal-group reveal-head">
+      <p class="section__eyebrow reveal-item">Sobre</p>
+      <h2 class="section__title reveal-item">
+        <svg class="icon-inline" viewBox="0 0 40 60" aria-hidden="true"><use href="#icon-pine" /></svg>
+        Formação e caminho
+      </h2>
+    </div>
+
+    <div class="timeline reveal-group">
+      <div class="timeline__item reveal-item">
+        <span class="timeline__mark"></span>
+        <div>
+          <p class="timeline__label">Técnico em Informática</p>
+          <p class="timeline__meta">Instituto Federal de Mato Grosso do Sul (IFMS)</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal-item">
+        <span class="timeline__mark"></span>
+        <div>
+          <p class="timeline__label">Análise e Desenvolvimento de Sistemas</p>
+          <p class="timeline__meta">Faculdade Infnet — em andamento (6º mês)</p>
+        </div>
+      </div>
+      <div class="timeline__item reveal-item">
+        <span class="timeline__mark"></span>
+        <div>
+          <p class="timeline__label">Desenvolvimento de Software</p>
+          <p class="timeline__meta">Brigham Young University (BYU) — em andamento</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="languages">
+      <p class="languages__label">Idiomas</p>
+      <div class="languages__list reveal-group">
+        <span class="lang-tag reveal-item">Português <em>nativo</em></span>
+        <span class="lang-tag reveal-item">Inglês <em>fluente</em></span>
+        <span class="lang-tag reveal-item">Espanhol <em>fluente</em></span>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider" style="color:var(--ink)" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,25 C200,0 350,50 600,30 C850,10 1000,45 1200,20 L1200,60 L0,60 Z" fill="currentColor" />
+  </svg>
+</section>
+
+<!-- ============ HABILIDADES ============ -->
+<section class="section section--ink" id="habilidades">
+  <svg class="habilidades__guanaco" viewBox="0 0 100 90" aria-hidden="true">
+    <use href="#icon-guanaco" />
+  </svg>
+
+  <div class="section__inner">
+    <div class="reveal-group reveal-head">
+      <p class="section__eyebrow section__eyebrow--light reveal-item">Habilidades</p>
+      <h2 class="section__title section__title--light reveal-item">Ferramentas do ofício</h2>
+      <p class="section__lede reveal-item">
+        As linguagens e tecnologias que uso para transformar problemas em software.
+      </p>
+    </div>
+
+    <div class="sigils reveal-group">
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">Py</span><span class="sigil__name">Python</span></div>
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">Jv</span><span class="sigil__name">Java</span></div>
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">C#</span><span class="sigil__name">C#</span></div>
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">SQL</span><span class="sigil__name">SQL</span></div>
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">&lt;/&gt;</span><span class="sigil__name">HTML &amp; CSS</span></div>
+      <div class="sigil reveal-item spotlight"><span class="sigil__mark">JS</span><span class="sigil__name">JavaScript</span></div>
+    </div>
+  </div>
+
+  <svg class="wave-divider" style="color:var(--parchment)" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,30 C200,60 350,0 600,20 C850,40 1000,0 1200,25 L1200,60 L0,60 Z" fill="currentColor" />
+  </svg>
+</section>
+
+<!-- ============ PROJETOS ============ -->
+<section class="section section--parchment" id="projetos">
+  <div class="section__inner">
+    <div class="reveal-group reveal-head">
+      <p class="section__eyebrow reveal-item">Projetos</p>
+      <h2 class="section__title reveal-item">Trabalhos selecionados</h2>
+      <p class="section__lede reveal-item">
+        Projetos que mostram como penso, aprendo e transformo problemas em
+        soluções práticas com código.
+      </p>
+    </div>
+
+    <div class="projects reveal-group">
+
+      <article class="project reveal-item spotlight tilt">
+        <p class="project__chapter">Ponto 01</p>
+        <h3 class="project__title">Air Food Express</h3>
+        <p class="project__desc">
+          Aplicação acadêmica em Python para gerenciar restaurantes, cardápios
+          e pedidos, com entregas simuladas por drones. Utiliza arquivos CSV
+          para persistência de dados e inclui testes com Pytest.
+        </p>
+        <ul class="project__tags">
+          <li>Python</li><li>CSV</li><li>Pytest</li>
+        </ul>
+        <div class="project__links">
+          <a href="https://github.com/gianluccagpalma/Air_Food_Express"
+             target="_blank" rel="noopener" class="project__link">Código-fonte ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal-item spotlight tilt">
+        <p class="project__chapter">Ponto 02</p>
+        <h3 class="project__title">Química — IFMS</h3>
+        <p class="project__desc">
+          Página desenvolvida em 2022 para um trabalho de Química no IFMS,
+          durante o ensino médio. Um projeto que conecta desenvolvimento web
+          à apresentação de conteúdos da disciplina.
+        </p>
+        <ul class="project__tags">
+          <li>HTML</li><li>Educação</li>
+        </ul>
+        <div class="project__links">
+          <a href="https://github.com/gianluccagpalma/Projeto-Quimica-IFMS"
+             target="_blank" rel="noopener" class="project__link">Código-fonte ↗</a>
+          <a href="https://gianluccagpalma.github.io/Projeto-Quimica-IFMS/"
+             target="_blank" rel="noopener" class="project__link">Visitar página ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal-item spotlight tilt">
+        <p class="project__chapter">Ponto 03</p>
+        <h3 class="project__title">Complex Python Codes 4 Beginners</h3>
+        <p class="project__desc">
+          Coleção em expansão de projetos Python sobre recibos de compras,
+          avaliação de senhas, pressão da água e massa molar. Reúne lógica,
+          funções, arquivos CSV e testes automatizados, com novos projetos a caminho.
+        </p>
+        <ul class="project__tags">
+          <li>Python</li><li>CSV</li><li>Pytest</li>
+        </ul>
+        <div class="project__links">
+          <a href="https://github.com/gianluccagpalma/Complex-Python-Codes-4Beginners"
+             target="_blank" rel="noopener" class="project__link">Código-fonte ↗</a>
+          <a href="https://github.com/gianluccagpalma/Complex-Python-Codes-4Beginners/tree/main/Grocery_Store"
+             target="_blank" rel="noopener" class="project__link">Ver exemplo ↗</a>
+        </div>
+      </article>
+
+      <article class="project reveal-item spotlight tilt">
+        <p class="project__chapter">Ponto 04</p>
+        <h3 class="project__title">RPG Game</h3>
+        <p class="project__desc">
+          Jogo de RPG em Java, atualmente em desenvolvimento.
+          Em breve, compartilharei os detalhes e o código-fonte por aqui.
+        </p>
+        <ul class="project__tags">
+          <li>Java</li><li>Em desenvolvimento</li>
+        </ul>
+      </article>
+
+    </div>
+    <div class="projects__actions">
+      <a href="https://github.com/gianluccagpalma?tab=repositories"
+         target="_blank" rel="noopener" class="btn btn--seal btn--magnetic">Ver mais projetos no GitHub ↗</a>
+    </div>
+  </div>
+
+  <svg class="wave-divider" style="color:var(--ink)" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,25 C200,0 350,50 600,30 C850,10 1000,45 1200,20 L1200,60 L0,60 Z" fill="currentColor" />
+  </svg>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="section section--ink" id="contato">
+  <div class="section__inner section__inner--center">
+    <div class="reveal-group reveal-head">
+      <p class="section__eyebrow section__eyebrow--light reveal-item">Contato</p>
+      <h2 class="section__title section__title--light reveal-item">Vamos conversar</h2>
+      <p class="section__lede section__lede--center reveal-item">
+        Estou em busca de uma vaga de estágio para o próximo semestre.
+        Se meu trabalho combina com o que você procura, me chame.
+      </p>
+    </div>
+
+    <div class="reveal-group">
+      <a href="mailto:gianluccapalma25@gmail.com" class="btn btn--seal btn--large btn--magnetic reveal-item">Enviar mensagem</a>
+
+      <div class="social reveal-item">
+        <a href="https://github.com/gianluccagpalma" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/gianluccapalma" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:gianluccapalma25@gmail.com">E-mail</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <svg class="footer__fox" viewBox="0 0 100 70" aria-hidden="true">
+    <use href="#icon-fox" />
+  </svg>
+  <span class="footer__rule"></span>
+  <p>Feito por Gianlucca Palma · <span id="year"></span></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
