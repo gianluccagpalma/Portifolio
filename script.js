@@ -101,7 +101,7 @@ navToggle.addEventListener('click', () => {
   navToggle.setAttribute('aria-expanded', String(open));
   if (open) navLinks[0]?.focus();
 });
-navLinks.forEach(link => link.addEventListener('click', () => {
+nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
   if (mobileNav.matches) closeNav(true);
 }));
 document.addEventListener('keydown', event => {
