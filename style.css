@@ -164,8 +164,26 @@ img{ max-width: 100%; display: block; }
 }
 .nav__cta:hover{ background: var(--gold); color: var(--ink); }
 
-@media (max-width: 720px){
+.nav__actions{ display: flex; align-items: center; gap: 12px; }
+.nav__language{
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-light);
+  background: var(--ink);
+  border: 1px solid var(--gold);
+  border-radius: 2px;
+  padding: 8px;
+  min-height: 40px;
+  cursor: pointer;
+}
+
+@media (max-width: 960px){
   .nav__links{ display: none; }
+}
+@media (max-width: 380px){
+  .nav{ padding-left: 16px; padding-right: 16px; }
+  .nav__actions{ gap: 8px; }
+  .nav__cta{ padding: 7px 8px; }
 }
 
 /* ===================================================================
@@ -337,7 +355,7 @@ img{ max-width: 100%; display: block; }
 
 @media (max-width: 860px){
   .hero__inner{
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
   .hero__text--panel{ text-align: center; }

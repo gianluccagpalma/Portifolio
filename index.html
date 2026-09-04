@@ -64,7 +64,14 @@
     <a href="#contato">Contato</a>
     <span class="nav__indicator" id="navIndicator"></span>
   </nav>
-  <a href="#contato" class="nav__cta">Vamos falar</a>
+  <div class="nav__actions">
+    <select id="languageSelect" class="nav__language" aria-label="Idioma da página">
+      <option value="pt-BR" lang="pt-BR">Português</option>
+      <option value="en" lang="en">English</option>
+      <option value="es" lang="es">Español</option>
+    </select>
+    <a href="#contato" class="nav__cta">Vamos falar</a>
+  </div>
 </header>
 
 <!-- ============ HERO ============ -->
@@ -90,7 +97,7 @@
   <div class="hero__inner">
     <div class="hero__text hero__text--panel">
       <p class="eyebrow fade-up" style="--d:0.1s">Desenvolvedor de Software</p>
-      <h1 class="hero__name fade-up" style="--d:0.25s">Gianlucca&nbsp;Palma</h1>
+      <h1 class="hero__name fade-up" style="--d:0.25s">Gianlucca Palma</h1>
       <p class="hero__tagline fade-up" style="--d:0.4s">
         Técnico em Informática pelo <strong>IFMS</strong>, hoje cursando Análise e
         Desenvolvimento de Sistemas na <strong>Infnet</strong> e Desenvolvimento de
@@ -99,7 +106,7 @@
       </p>
       <div class="hero__actions fade-up" style="--d:0.55s">
         <a href="#projetos" class="btn btn--seal btn--magnetic">Ver projetos</a>
-        <a href="curriculo.pdf" class="btn btn--ghost btn--magnetic">Baixar currículo</a>
+        <a id="resumeDownload" href="Curriculos/Curriculo_Gianlucca_Palma_PT-BR.pdf" download class="btn btn--ghost btn--magnetic">Baixar currículo</a>
       </div>
     </div>
 
@@ -126,7 +133,7 @@
       <p class="section__eyebrow reveal-item">Sobre</p>
       <h2 class="section__title reveal-item">
         <svg class="icon-inline" viewBox="0 0 40 60" aria-hidden="true"><use href="#icon-pine" /></svg>
-        Formação e caminho
+        <span class="about-title">Formação e caminho</span>
       </h2>
     </div>
 
@@ -142,7 +149,7 @@
         <span class="timeline__mark"></span>
         <div>
           <p class="timeline__label">Análise e Desenvolvimento de Sistemas</p>
-          <p class="timeline__meta">Faculdade Infnet — em andamento (6º mês)</p>
+          <p class="timeline__meta">Faculdade Infnet — em andamento</p>
         </div>
       </div>
       <div class="timeline__item reveal-item">
@@ -299,7 +306,7 @@
       <p class="section__eyebrow section__eyebrow--light reveal-item">Contato</p>
       <h2 class="section__title section__title--light reveal-item">Vamos conversar</h2>
       <p class="section__lede section__lede--center reveal-item">
-        Estou em busca de uma vaga de estágio para o próximo semestre.
+        Estou em busca de uma oportunidade de estágio ou de uma vaga como desenvolvedor júnior.
         Se meu trabalho combina com o que você procura, me chame.
       </p>
     </div>
@@ -321,9 +328,10 @@
     <use href="#icon-fox" />
   </svg>
   <span class="footer__rule"></span>
-  <p>Feito por Gianlucca Palma · <span id="year"></span></p>
+  <p><span class="footer__credit">Feito por Gianlucca Palma</span> · <span id="year"></span></p>
 </footer>
 
 <script src="script.js"></script>
+<script src="translations.js"></script>
 </body>
 </html>
