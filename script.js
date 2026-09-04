@@ -87,6 +87,34 @@ window.addEventListener('scroll', setActiveLink, { passive: true });
 window.addEventListener('resize', setActiveLink);
 setActiveLink();
 
+// Mobile navigation uses the same section links as the desktop navbar.
+const navToggle = document.getElementById('navToggle');
+const mobileNav = window.matchMedia('(max-width: 960px)');
+const closeNav = (restoreFocus = false) => {
+  nav.classList.remove('nav--open');
+  navToggle.setAttribute('aria-expanded', 'false');
+  if (restoreFocus) navToggle.focus();
+};
+navToggle.addEventListener('click', () => {
+  const open = navToggle.getAttribute('aria-expanded') !== 'true';
+  nav.classList.toggle('nav--open', open);
+  navToggle.setAttribute('aria-expanded', String(open));
+  if (open) navLinks[0]?.focus();
+});
+navLinks.forEach(link => link.addEventListener('click', () => {
+  if (mobileNav.matches) closeNav(true);
+}));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && nav.classList.contains('nav--open')) closeNav(true);
+});
+document.addEventListener('click', event => {
+  if (!nav.contains(event.target)) closeNav();
+});
+nav.addEventListener('focusout', event => {
+  if (!nav.contains(event.relatedTarget)) closeNav();
+});
+mobileNav.addEventListener('change', () => closeNav());
+
 // ===================================================================
 // Scroll reveal (IntersectionObserver)
 // ===================================================================

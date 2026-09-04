@@ -2,6 +2,7 @@
 // Each entry maps a selector to English and Spanish; repeated selectors share copy.
 (() => {
   const copy = [
+    ['.nav__toggle-label', 'Menu', 'Menú'],
     ['.nav__links a[href="#sobre"], #sobre .section__eyebrow', 'About', 'Sobre mí'],
     ['.nav__links a[href="#habilidades"], #habilidades .section__eyebrow', 'Skills', 'Habilidades'],
     ['.nav__links a[href="#projetos"], #projetos .section__eyebrow', 'Projects', 'Proyectos'],
@@ -48,6 +49,7 @@
   ];
 
   const attributes = [
+    ['#navToggle', 'aria-label', 'Navigation menu', 'Menú de navegación'],
     ['.nav__mark', 'aria-label', 'Home', 'Inicio'],
     ['#languageSelect', 'aria-label', 'Page language', 'Idioma de la página'],
     ['.scroll-hint', 'aria-label', 'Scroll to the About section', 'Ir a la sección Sobre mí'],
