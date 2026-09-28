@@ -281,14 +281,36 @@
 
       <article class="project reveal-item spotlight tilt">
         <p class="project__chapter">Ponto 04</p>
-        <h3 class="project__title">RPG Game</h3>
+        <h3 class="project__title">Mine RPG</h3>
+
         <p class="project__desc">
-          Jogo de RPG em Java, atualmente em desenvolvimento.
-          Em breve, compartilharei os detalhes e o código-fonte por aqui.
+          RPG de terminal desenvolvido em Java, com diferentes heróis e monstros,
+          sistema de combate por turnos, iniciativa e ranking persistente.
+          O projeto aplica conceitos de Programação Orientada a Objetos, como
+          herança, encapsulamento, abstração e polimorfismo.
         </p>
+
         <ul class="project__tags">
-          <li>Java</li><li>Em desenvolvimento</li>
+          <li>Java</li>
+          <li>POO</li>
+          <li>Maven</li>
+          <li>CSV</li>
         </ul>
+
+        <div class="project__links">
+          <a href="https://github.com/gianluccagpalma/Mine_RPG"
+            target="_blank"
+            rel="noopener"
+            class="project__link">
+            Código-fonte ↗
+          </a>
+
+          <button type="button"
+                  class="project__link project__demo"
+                  id="open-rpg-demo">
+            Ver exemplo ↗
+          </button>
+        </div>
       </article>
 
     </div>
@@ -302,6 +324,58 @@
     <path d="M0,25 C200,0 350,50 600,30 C850,10 1000,45 1200,20 L1200,60 L0,60 Z" fill="currentColor" />
   </svg>
 </section>
+
+<!-- ============ MINE RPG DEMO ============ -->
+<div class="demo-modal" id="rpg-demo-modal" aria-hidden="true">
+
+  <div class="demo-modal__backdrop" data-close-demo></div>
+
+  <div
+    class="demo-modal__content"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="rpg-demo-title"
+  >
+
+    <button
+      type="button"
+      class="demo-modal__close"
+      id="close-rpg-demo"
+      aria-label="Fechar demonstração"
+    >
+      ×
+    </button>
+
+    <div class="demo-modal__header">
+      <p class="demo-modal__eyebrow">Demonstração</p>
+
+      <h2 id="rpg-demo-title">Mine RPG</h2>
+
+      <p>
+        Veja o sistema de combate, iniciativa e ranking funcionando
+        diretamente no terminal.
+      </p>
+    </div>
+
+    <div class="demo-modal__video">
+      <video
+        id="rpg-demo-video"
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      >
+        <source
+          src="mine-rpg-demo.mp4"
+          type="video/mp4"
+        >
+
+        Seu navegador não suporta vídeos HTML5.
+      </video>
+    </div>
+
+  </div>
+</div>
 
 <!-- ============ CONTATO ============ -->
 <section class="section section--ink" id="contato">
