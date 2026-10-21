@@ -165,8 +165,8 @@
 
     [
       '#projetos .section__title',
-      'Selected work',
-      'Trabajos seleccionados'
+      'A trail of projects',
+      'Un recorrido de proyectos'
     ],
 
     [
@@ -177,6 +177,10 @@
       'Proyectos que muestran cómo pienso, aprendo y transformo problemas en soluciones prácticas con código.'
     ],
 
+
+    ["[data-project=\"retrorun\"] .project__desc","A Python terminal game: navigate a 20 × 20 map to the flag with WASD controls and a move counter.","Juego de terminal en Python: recorre un mapa de 20 × 20 hasta la bandera, con controles WASD y contador de movimientos."],
+
+    ['.project:nth-child(5) .project__chapter', 'Stop 05', 'Punto 05'],
 
     // Project numbers
 
@@ -206,67 +210,43 @@
 
 
     // ================================================================
-    // PROJECT 01 — AIR FOOD EXPRESS
+    // AIR FOOD EXPRESS
+    // ================================================================
+
+    ["[data-project=\"air-food-express\"] .project__desc","A Python application for restaurants, menus and orders, with simulated drone deliveries, CSV files and tests.","Aplicación Python para restaurantes, menús y pedidos, con entregas simuladas mediante drones, archivos CSV y pruebas."],
+
+
+    // ================================================================
+    // CHEMISTRY IFMS
     // ================================================================
 
     [
-      '.project:nth-child(1) .project__desc',
-
-      'An academic Python application for managing restaurants, menus and orders, with simulated drone deliveries. Uses CSV files for data persistence and includes tests with Pytest.',
-
-      'Aplicación académica en Python para gestionar restaurantes, menús y pedidos, con entregas simuladas mediante drones. Utiliza archivos CSV para persistir los datos e incluye pruebas con Pytest.'
-    ],
-
-
-    // ================================================================
-    // PROJECT 02 — CHEMISTRY IFMS
-    // ================================================================
-
-    [
-      '.project:nth-child(2) .project__title',
+      '[data-project="quimica-ifms"] .project__title',
       'Chemistry — IFMS',
       'Química — IFMS'
     ],
 
-    [
-      '.project:nth-child(2) .project__desc',
-
-      'A website developed in 2022 for a high school Chemistry assignment at IFMS. A project connecting web development with the presentation of course content.',
-
-      'Página desarrollada en 2022 para un trabajo de Química en el IFMS, durante la educación secundaria. Un proyecto que conecta el desarrollo web con la presentación de contenidos de la asignatura.'
-    ],
+    ["[data-project=\"quimica-ifms\"] .project__desc","A page created for a Chemistry assignment at IFMS, connecting web development with course content.","Página creada para un trabajo de Química en el IFMS, conectando desarrollo web y contenidos de la asignatura."],
 
     [
-      '.project:nth-child(2) .project__tags li:nth-child(2)',
+      '[data-project="quimica-ifms"] .project__tags li:nth-child(2)',
       'Education',
       'Educación'
     ],
 
 
     // ================================================================
-    // PROJECT 03 — COMPLEX PYTHON CODES 4 BEGINNERS
+    // COMPLEX PYTHON CODES 4 BEGINNERS
     // ================================================================
 
-    [
-      '.project:nth-child(3) .project__desc',
-
-      'A growing collection of Python projects covering shopping receipts, password evaluation, water pressure and molar mass. Brings together logic, functions, CSV files and automated tests, with more projects on the way.',
-
-      'Colección en expansión de proyectos Python sobre recibos de compras, evaluación de contraseñas, presión del agua y masa molar. Reúne lógica, funciones, archivos CSV y pruebas automatizadas, con nuevos proyectos en camino.'
-    ],
+    ["[data-project=\"complex-python\"] .project__desc","Python learning projects: sales and statement analysis, word frequency and CPF validation, using files, functions and tests.","Proyectos de estudio en Python: análisis de ventas y extractos, frecuencia de palabras y validación de CPF, con archivos, funciones y pruebas."],
 
 
     // ================================================================
-    // PROJECT 04 — MINE RPG
+    // MINE RPG
     // ================================================================
 
-    [
-      '.project:nth-child(4) .project__desc',
-
-      'A terminal-based RPG developed in Java, featuring different heroes and monsters, turn-based combat, initiative mechanics and a persistent ranking system. The project applies Object-Oriented Programming concepts such as inheritance, encapsulation, abstraction and polymorphism.',
-
-      'RPG de terminal desarrollado en Java, con diferentes héroes y monstruos, combate por turnos, sistema de iniciativa y ranking persistente. El proyecto aplica conceptos de Programación Orientada a Objetos como herencia, encapsulamiento, abstracción y polimorfismo.'
-    ],
+    ["[data-project=\"mine-rpg\"] .project__desc","A Java terminal RPG with turn-based combat, different heroes and monsters, initiative and persistent rankings.","RPG de terminal en Java con combate por turnos, distintos héroes y monstruos, iniciativa y ranking persistente."],
 
 
     // ================================================================
@@ -274,60 +254,31 @@
     // ================================================================
 
     [
-      '.project__links a:first-child',
-      'Source code ↗',
-      'Código fuente ↗'
+      '.project__source-label',
+      'View on GitHub ↗',
+      'Ver en GitHub ↗'
     ],
 
     [
-      '.project:nth-child(2) .project__links a:nth-child(2)',
+      '[data-project="quimica-ifms"] .project__links a:nth-child(2)',
       'Visit website ↗',
       'Visitar página ↗'
     ],
 
-    [
-      '.project:nth-child(3) .project__links a:nth-child(2)',
-      'View example ↗',
-      'Ver ejemplo ↗'
-    ],
+
 
     [
-      '#open-rpg-demo',
-      'View example ↗',
-      'Ver ejemplo ↗'
-    ],
-
-    [
-      '.projects__actions a',
+      '.projects__more-label',
       'View more projects on GitHub ↗',
       'Ver más proyectos en GitHub ↗'
     ],
 
 
     // ================================================================
-    // MINE RPG DEMO MODAL
+    // MINE RPG VIDEO
     // ================================================================
-
-    [
-      '.demo-modal__eyebrow',
-      'Demo',
-      'Demostración'
-    ],
-
-    [
-      '#rpg-demo-title',
-      'Mine RPG',
-      'Mine RPG'
-    ],
-
-    [
-      '.demo-modal__header > p:last-child',
-
-      'See the combat, initiative and ranking systems running directly in the terminal.',
-
-      'Mira los sistemas de combate, iniciativa y ranking funcionando directamente en la terminal.'
-    ],
-
+    ['[data-project="mine-rpg"] .project__media figcaption', 'Mine RPG in action — combat, initiative and ranking.', 'Mine RPG en acción — combate, iniciativa y ranking.'],
+    ['#rpg-demo-video a', 'Download Mine RPG video', 'Descargar vídeo de Mine RPG'],
 
     // ================================================================
     // CONTACT
@@ -377,6 +328,7 @@
   // ===================================================================
 
   const attributes = [
+    ['[data-project="complex-python"] img', 'alt', 'Illustrated Python editor showing real repository projects and a word frequency example.', 'Ilustración de un editor Python con proyectos reales del repositorio y un ejemplo de frecuencia de palabras.'],
 
     [
       '#navToggle',
@@ -421,10 +373,10 @@
     ],
 
     [
-      '#close-rpg-demo',
+      '#rpg-demo-video',
       'aria-label',
-      'Close demo',
-      'Cerrar demostración'
+      'Mine RPG demonstration',
+      'Demostración de Mine RPG'
     ],
 
     [

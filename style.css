@@ -794,90 +794,64 @@ img{ max-width: 100%; display: block; }
 /* ===================================================================
    PROJETOS
 =================================================================== */
-.projects{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1px;
-  background: var(--gold);
-  border: 1px solid var(--gold);
-  perspective: 1200px;
-}
-
-.projects__actions{
-  display: flex;
-  justify-content: center;
-  margin-top: 32px;
-  text-align: center;
-}
-
+#projetos{ padding-top: 72px; padding-bottom: 72px; }
+#projetos .section__inner{ max-width: 980px; }
+#projetos .section__title{ font-size: clamp(30px, 3.5vw, 38px); margin-bottom: 12px; }
+#projetos .section__lede{ font-size: 15px; margin-bottom: 36px; }
+.projects{ position: relative; }
 .project{
-  background: var(--parchment);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 88px minmax(0, 1fr);
+  align-items: start;
+  padding-bottom: 36px;
 }
-
-.project__chapter{
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 14px;
+/* Every segment joins the next at the center, creating one continuous trail. */
+.project::before{
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: calc(50% - 44px);
+  width: 88px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='88' height='400' viewBox='0 0 88 400' preserveAspectRatio='none'%3E%3Cpath d='M44 0 C44 90 70 90 52 180 S18 290 44 400' fill='none' stroke='%233F6B4A' stroke-width='1.5' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
-
-.project__title{
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 26px;
-  color: var(--text-dark);
-  margin-bottom: 12px;
+.project::after{
+  content: attr(data-step);
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  display: grid; place-items: center;
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--gold); color: var(--parchment);
+  box-shadow: 0 0 0 7px var(--parchment);
+  font: 12px var(--font-mono);
 }
-
-.project__desc{
-  font-size: 15px;
-  color: var(--text-dark-muted);
-  margin-bottom: 20px;
-  flex-grow: 1;
-}
-
-.project__tags{
-  list-style: none;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 22px;
-}
-.project__tags li{
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--teal);
-  border: 1px solid var(--teal);
-  padding: 4px 10px;
-  border-radius: 2px;
-}
-
-.project__links{
-  display: flex;
-  gap: 20px;
-}
-
-.project__link{
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-.project__link:hover{
-  color: var(--gold);
-  transform: translateX(3px);
-}
-
+.project:last-child{ padding-bottom: 30px; }
+.project:last-child::before{ mask-image: linear-gradient(#000, transparent); }
+.project__content{ grid-column: 3; grid-row: 1; min-width: 0; }
+.project:nth-child(even) .project__content{ grid-column: 1; }
+.project__chapter{ display: none; font: 12px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 8px 0 14px; }
+.project__title{ font-family: var(--font-display); font-weight: 600; font-size: clamp(25px, 2.6vw, 32px); line-height: 1.12; color: var(--text-dark); margin-bottom: 10px; overflow-wrap: anywhere; }
+.project__desc{ font-size: 14px; line-height: 1.6; color: var(--text-dark-muted); margin-bottom: 12px; }
+.project__tags{ list-style: none; display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 12px; }
+.project__tags li{ font: 11px var(--font-mono); color: var(--gold); }
+.project__links{ display: flex; flex-wrap: wrap; gap: 12px 24px; }
+.github-icon{ width: 18px; height: 18px; flex-shrink: 0; fill: currentColor; }
+.project__link{ display: inline-flex; align-items: center; gap: 8px; font: 13px var(--font-mono); color: var(--text-dark); border-bottom: 1px solid var(--gold); padding: 4px 0; }
+.project__link:hover{ color: var(--gold); }
+.project__media{ grid-column: 1; grid-row: 1; min-width: 0; margin-top: 0; width: 100%; max-width: 360px; justify-self: center; }
+.project:nth-child(even) .project__media{ grid-column: 3; }
+.project__media video, .project__media img{ display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: var(--ink); border-radius: 4px; box-shadow: 0 14px 32px rgba(23,33,25,.14); }
+.project__media figcaption{ margin-top: 12px; color: var(--text-dark-muted); font: 11px/1.6 var(--font-mono); }
+.projects__actions{ display: flex; justify-content: center; margin-top: 32px; text-align: center; }
 @media (max-width: 720px){
-  .projects{ grid-template-columns: 1fr; }
+  .project{ grid-template-columns: 36px minmax(0, 1fr); column-gap: 14px; padding-bottom: 30px; }
+  .project::before{ left: 0; width: 36px; }
+  .project::after{ left: 18px; width: 28px; height: 28px; font-size: 10px; box-shadow: 0 0 0 4px var(--parchment); }
+  .project__content, .project:nth-child(even) .project__content{ grid-column: 2; grid-row: 1; }
+  .project__media, .project:nth-child(even) .project__media{ grid-column: 2; grid-row: 2; margin-top: 16px; }
+  .project__chapter{ margin-top: 6px; }
 }
 
 /* ===================================================================
@@ -921,245 +895,4 @@ img{ max-width: 100%; display: block; }
   margin: 0 auto 20px;
 }
 
-/* ===================================================================
-   MINE RPG — DEMO MODAL
-=================================================================== */
-
-.project__links{
-  display: flex;
-  gap: 20px;
-}
-
-.project__link{
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dark);
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 2px;
-  transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.project__link:hover{
-  color: var(--gold);
-  transform: translateX(3px);
-}
-
-/* Remove o estilo padrão do <button> para que ele fique
-   visualmente idêntico aos links dos outros projetos. */
-.project__demo {
-  appearance: none;
-  -webkit-appearance: none;
-
-  background: none;
-  border: none;
-  border-bottom: 1px solid var(--gold);
-
-  padding: 0 0 2px;
-  margin: 0;
-
-  font-family: var(--font-mono);
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.6;
-  letter-spacing: normal;
-
-  color: var(--text-dark);
-
-  cursor: pointer;
-}
-
-@media (max-width: 720px){
-  .projects{ grid-template-columns: 1fr; }
-}
-
-/* Modal */
-
-.demo-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 24px;
-
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-
-  transition:
-    opacity 0.3s ease,
-    visibility 0.3s ease;
-}
-
-.demo-modal.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
-/* Fundo */
-
-.demo-modal__backdrop {
-  position: absolute;
-  inset: 0;
-
-  background: rgba(10, 15, 11, 0.88);
-
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Janela */
-
-.demo-modal__content {
-  position: relative;
-  z-index: 1;
-
-  width: min(960px, 95vw);
-  max-height: 92vh;
-  overflow-y: auto;
-
-  padding: clamp(22px, 4vw, 40px);
-
-  background: var(--parchment);
-
-  border: 1px solid rgba(63, 107, 74, 0.35);
-  border-radius: 6px;
-
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(127, 191, 140, 0.08);
-
-  color: var(--text-dark);
-
-  transform: translateY(25px) scale(0.98);
-
-  transition:
-    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.demo-modal.is-open .demo-modal__content {
-  transform: translateY(0) scale(1);
-}
-
-/* Cabeçalho */
-
-.demo-modal__header {
-  margin-bottom: 24px;
-}
-
-.demo-modal__eyebrow {
-  margin-bottom: 8px;
-
-  font-family: var(--font-mono);
-  font-size: 12px;
-
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: var(--gold);
-}
-
-.demo-modal__header h2 {
-  margin-bottom: 8px;
-
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 54px);
-  font-weight: 600;
-  line-height: 1;
-}
-
-.demo-modal__header p {
-  max-width: 620px;
-
-  color: var(--text-dark-muted);
-  font-size: 15px;
-}
-
-/* Fechar */
-
-.demo-modal__close {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-
-  width: 42px;
-  height: 42px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background: transparent;
-
-  border: 1px solid rgba(63, 107, 74, 0.3);
-  border-radius: 50%;
-
-  color: var(--text-dark);
-
-  font-family: var(--font-body);
-  font-size: 26px;
-
-  cursor: pointer;
-
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.demo-modal__close:hover {
-  background: var(--gold);
-  color: var(--text-light);
-
-  transform: rotate(90deg);
-}
-
-/* Vídeo */
-
-.demo-modal__video {
-  overflow: hidden;
-
-  background: var(--ink);
-
-  border: 1px solid rgba(63, 107, 74, 0.3);
-  border-radius: 4px;
-
-  box-shadow: 0 18px 40px rgba(23, 33, 25, 0.25);
-}
-
-.demo-modal__video video {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  background: #000;
-}
-
-/* Mobile */
-
-@media (max-width: 600px) {
-
-  .demo-modal {
-    padding: 12px;
-  }
-
-  .demo-modal__content {
-    width: 100%;
-    padding: 22px 16px 16px;
-  }
-
-  .demo-modal__header {
-    padding-right: 45px;
-  }
-
-  .demo-modal__close {
-    top: 12px;
-    right: 12px;
-  }
-}
+.projects__actions .btn{ gap: 10px; font-size: 12px; padding: 12px 20px; }

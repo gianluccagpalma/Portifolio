@@ -24,7 +24,7 @@ _Transformando ideias e problemas em experiências digitais._
 
 Sou **Técnico em Informática pelo Instituto Federal de Mato Grosso do Sul (IFMS)** e atualmente curso:
 
-🎓 **Análise e Desenvolvimento de Sistemas** — Faculdade Infnet  
+🎓 **Análise e Desenvolvimento de Sistemas** — Faculdade Infnet<br>
 💻 **Desenvolvimento de Software** — Brigham Young University (BYU)
 
 Tenho interesse em desenvolvimento de software, resolução de problemas e criação de interfaces que combinem funcionalidade com uma boa experiência de uso. Busco oportunidades para aprender, colaborar com equipes e construir produtos que gerem impacto real.
@@ -64,12 +64,12 @@ O site foi desenvolvido como uma página única, responsiva e acessível, com na
 
 ## 🚀 Destaques
 
-✅ Layout responsivo para computadores, tablets e celulares  
-✅ Barra de progresso de leitura  
-✅ Navegação rápida entre as seções  
-✅ Animações ativadas durante a rolagem  
-✅ Efeitos interativos em botões e cartões  
-✅ Links para projetos, currículo e redes profissionais  
+✅ Layout responsivo para computadores, tablets e celulares<br>
+✅ Barra de progresso de leitura<br>
+✅ Navegação rápida entre as seções<br>
+✅ Animações ativadas durante a rolagem<br>
+✅ Efeitos interativos em botões e cartões<br>
+✅ Links para projetos, currículo e redes profissionais<br>
 ✅ Identidade visual autoral inspirada na natureza
 
 ---
@@ -81,9 +81,11 @@ O site foi desenvolvido como uma página única, responsiva e acessível, com na
 ├── 📄 index.html          # Estrutura principal
 ├── 🎨 style.css           # Estilos e animações
 ├── ⚙️ script.js           # Interações da página
-├── 👤 profile.jpg         # Foto de perfil
+├── 👤 profile.png         # Foto de perfil
 ├── 🏞️ lake-landscape.jpg # Imagem de fundo
-└── 📑 curriculo.pdf       # Currículo para download
+├── 🌐 translations.js    # Traduções para inglês e espanhol
+├── 🎬 mine-rpg-demo.mp4   # Demonstração do Mine RPG
+└── 📁 Curriculos/        # Currículos em português, inglês e espanhol
 ```
 
 ---
@@ -95,21 +97,20 @@ O portfólio é um site estático e não exige instalação de dependências.
 ### 1. Clone o repositório
 
 ```bash
-git clone https://github.com/gianluccagpalma/NOME-DO-REPOSITORIO.git
+git clone https://github.com/gianluccagpalma/Portifolio.git
 ```
 
 ### 2. Entre na pasta do projeto
 
 ```bash
-cd NOME-DO-REPOSITORIO
+cd Portifolio
 ```
 
 ### 3. Abra o projeto
 
 Abra o arquivo `index.html` em seu navegador. Se preferir, utilize uma extensão como o **Live Server** para acompanhar as alterações durante o desenvolvimento.
 
-> [!IMPORTANT]
-> Antes de publicar, substitua `NOME-DO-REPOSITORIO` pelo nome real do repositório e atualize os projetos, links e demonstrações exibidos no site.
+> Os projetos e seus links estão em `index.html`; as traduções estão em `translations.js`.
 
 ---
 

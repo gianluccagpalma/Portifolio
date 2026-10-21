@@ -132,7 +132,7 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
         }
       });
     },
-    { threshold: 0.2, rootMargin: '0px 0px -60px 0px' }
+    { threshold: 0, rootMargin: '0px 0px -60px 0px' }
   );
   revealGroups.forEach((group) => revealObserver.observe(group));
 }
@@ -215,55 +215,3 @@ if (heroBgImg && hasFinePointer && !prefersReducedMotion) {
     heroBgImg.style.transform = '';
   });
 }
-
-// ===================================================================
-// Mine RPG — Demo modal
-// ===================================================================
-
-const rpgDemoModal = document.getElementById('rpg-demo-modal');
-const openRpgDemo = document.getElementById('open-rpg-demo');
-const closeRpgDemo = document.getElementById('close-rpg-demo');
-const rpgDemoVideo = document.getElementById('rpg-demo-video');
-
-const openRpgDemoModal = () => {
-  if (!rpgDemoModal || !rpgDemoVideo) return;
-
-  rpgDemoModal.classList.add('is-open');
-  rpgDemoModal.setAttribute('aria-hidden', 'false');
-
-  document.body.style.overflow = 'hidden';
-
-  rpgDemoVideo.currentTime = 0;
-
-  rpgDemoVideo.play().catch(() => {
-    // O navegador pode bloquear autoplay em alguns casos.
-  });
-};
-
-const closeRpgDemoModal = () => {
-  if (!rpgDemoModal || !rpgDemoVideo) return;
-
-  rpgDemoModal.classList.remove('is-open');
-  rpgDemoModal.setAttribute('aria-hidden', 'true');
-
-  document.body.style.overflow = '';
-
-  rpgDemoVideo.pause();
-};
-
-openRpgDemo?.addEventListener('click', openRpgDemoModal);
-
-closeRpgDemo?.addEventListener('click', closeRpgDemoModal);
-
-rpgDemoModal
-  ?.querySelector('[data-close-demo]')
-  ?.addEventListener('click', closeRpgDemoModal);
-
-document.addEventListener('keydown', (event) => {
-  if (
-    event.key === 'Escape' &&
-    rpgDemoModal?.classList.contains('is-open')
-  ) {
-    closeRpgDemoModal();
-  }
-});
